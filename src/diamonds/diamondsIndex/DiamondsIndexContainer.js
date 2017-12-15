@@ -3,7 +3,7 @@ import { receiveAllDiamonds, requestAllDiamonds } from '../DiamondsActions'
 import DiamondsIndex from './DiamondsIndex'
 
 const mapStateToProps = (state, ownProps) => {
-    
+    console.log(state);
     return {
         web3: state.web3,
         diamonds: state.diamonds 
