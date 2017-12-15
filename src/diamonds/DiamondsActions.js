@@ -41,24 +41,30 @@ export function requestAllDiamonds() {
         .then(instance => {
           instance.getAllDiamonds()
             .then(result => {
-              let allDiamonds = {};
+                let allDiamonds = {};
+                if(result[1].length > 0){
+                    
 
-              result[1].forEach((price, index) => {
-                allDiamonds[index] = {} 
-                allDiamonds[index].price = price.toNumber()
-              })
+                    result[1].forEach((price, index) => {
+                        allDiamonds[index] = {} 
+                        allDiamonds[index].price = price.toNumber()
+                    })
 
-              result[2].forEach((ownerAddr, index) => {
-                allDiamonds[index].ownerAddr = ownerAddr
-              })
+                    result[2].forEach((ownerAddr, index) => {
+                        allDiamonds[index].ownerAddr = ownerAddr
+                    })
 
-              const allNames = result[0].slice(1).split('|');
-              allNames.forEach((name, index) => {
-                  allDiamonds[index].name = name
-              })
+                    console.log(allDiamonds);
 
-              dispatch(receiveAllDiamonds(allDiamonds)); 
+                    const allNames = result[0].slice(1).split('|');
+                    allNames.forEach((name, index) => {
+                        allDiamonds[index].name = name
+                    })
+
+                }
+                    dispatch(receiveAllDiamonds(allDiamonds));
             })
+            
         })
         .catch(function(err){
             console.log(err);

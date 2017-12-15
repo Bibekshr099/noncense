@@ -1991,12 +1991,12 @@
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {
-    "4447": {
+    "3": {
       "events": {},
       "links": {},
-      "address": "0x30a8ea8caa1bf53b42ea20ba226f0d2177a0b2c7"
+      "address": "0x5ce703ff34d71154c7a1e8d5874c604ef792449f"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-14T19:15:43.666Z"
+  "updatedAt": "2017-12-15T19:46:18.372Z"
 }
