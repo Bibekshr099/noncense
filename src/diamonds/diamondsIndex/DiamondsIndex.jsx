@@ -19,11 +19,8 @@ class DiamondsIndex extends React.Component {
     }
 
     render(){       
-        console.log(this.state);
         let diamonds;
-        console.log(this.state.diamonds[0]);
         if (this.state.diamonds[0]) {
-            console.log("im here!!");
             diamonds = Object.keys(this.state.diamonds).map(diamondId => (
                 <Link className="diamond-item" to={`diamonds/${diamondId}`}>
                     <div className="diamonds-item">
