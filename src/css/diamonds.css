@@ -14,7 +14,7 @@
     text-align: center;
     color: white;
     text-shadow: 0px 0px 9px white;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .diamonds-item-container {
@@ -31,7 +31,6 @@
 .diamonds-item {
     margin: 15px;
     width: 300px;
-    height: 360px;
     padding: 15px;
     border: 1px solid white;
     border-radius: 10px;
@@ -44,6 +43,9 @@
 .diamond-price {
     margin-top: 10px;
     font-weight: 600;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 .diamond-name {
@@ -59,16 +61,10 @@
     border: 1px solid #8e73a7;
     padding: 10px;
     border-radius: 10px;
-    width: 60px;
+    width: auto;
     position: absolute;
     right: 20px;
-    transition: 250ms linear;
-}
-
-.diamond-buy:hover {
-    background-color: #8e73a7;
-    color: white;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .diamonds-properties-list {
@@ -80,9 +76,19 @@
     opacity: 1;
 }
 
+.diamond-image-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
 .diamonds-item img {
-    width: 300px;
+    max-width: 300px;
+    max-height: 300px;
     height: auto;
+    width: auto;
 }
 
 .diamond-item {
@@ -104,7 +110,7 @@
 }
 
 .diamond-form fieldset label {
-    
+    display: block;
     margin-top: 15px;
     font-size: 12px;
     text-transform: uppercase;
@@ -116,20 +122,188 @@
 .diamond-form input {
     border: 0px solid white;
     padding: 10px;
-    border-bottom: 1px solid rgb(32, 32, 32);
+    border-bottom: 1px solid rgb(219, 219, 219);
     background: transparent;
     display: block;
     width: 90%; 
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
+    font-size: 20px;
+    color: white;
+}
+
+.diamond-form input::-webkit-input-placeholder {
+    color: rgb(207, 207, 207) !important;
 }
 
 .diamond-form input:hover {
-    background-color: rgba(255, 255, 255, 0.7)
+    background-color: rgba(242, 172, 252, 0.2);
 }
 
 .diamond-row {
-    width: 100%;
+    width: 93.5%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+}
+
+.diamond-form select {
+    margin-top: 10px;
+    background: transparent;
+    height: 45px;
+    font-size: 16px;
+    display: block;
+    border: 1px solid rgb(219, 219, 219);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    color: white;
+    width: 93.5%;
+}
+
+.diamond-form button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    background-color: transparent;
+    border: 1px solid white;
+    transition: 300ms linear;
+    margin-bottom: 100px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+.diamond-form button:hover {
+    background-color: white;
+    color: black;
+}
+
+.diamonds-show {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 900px;
+    border-radius: 20px;
+}
+
+.diamonds-container nav {
+    height: 80px;
+}
+
+.diamonds-show ul {
+    background-color: white;
+    list-style: none;
+    width: 450px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.diamond-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 620px;
+  border-radius: 20px 0px 0px 20px;
+  background-color: white;
+}
+
+.diamond-img {
+    width: 400px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.diamonds-show ul li {
+    padding: 10px;
+}
+
+.diamonds-show ul li button {
+    margin-left: 220px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    color: rgb(170, 170, 170);
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 300ms linear;
+    letter-spacing: 0.5pt;
+    width: 150px;
+}
+
+.diamonds-show ul li button:hover {
+    color: white;
+    border-color: black;
+    background-color: black;
+}
+
+#diamond-show-name {
+    margin-top: 20px;
+}
+
+#diamond-show-name p {
+    font-size: 22px;
+    color: #1A62A3;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    height: 90px;
+    padding-right: 30px;
+    margin: 10px;
+}
+
+#diamond-show-field p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    padding-right: 20px;
+    margin: 5px 10px;
+    font-size: 15px;
+}
+
+#diamond-show-line {
+    border-bottom: 1px solid rgb(207, 206, 206);
+    color: rgb(160, 160, 160);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+#diamond-show-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+}
+
+#diamond-show-item {
+    color: black;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+  text-transform: none;
+}
+
+.diamonds-item form input {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    border: 0px solid white;
+    padding: 5px;
+}
+
+.visible {
+    opacity: 1;
 }
