@@ -6,7 +6,7 @@
 
 ## Background and Overview
 
-Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t possible because of identification and authentication issues. With the recent creation of Everledger, a company that gives each newly sold diamond a digital identification and registers it on a blockchain, our plan is to create an online peer to peer marketplace and establish a layer of trust that allows users to buy and sell high value jewelry assets without having to going through a middle man. We’ll accomplish this by using Ethereum to construct a decentralized protocol that allows users to retain control of their funds, their assets, and their data while increasing the security and transparency of their transactions. All of this is accomplished without any centralized entity taking a cut of their profits.  
+Currently, peer to peer buying and selling of jewelry isn’t possible because of identification and authentication issues. With the recent creation of Everledger, a company that gives each newly sold diamond a digital identification and registers it on a blockchain, our plan is to create an online peer to peer marketplace and establish a layer of trust that allows users to buy and sell high value jewelry assets without having to going through a middle man. We’ll accomplish this by using Ethereum to construct a decentralized protocol that allows users to retain control of their funds, their assets, and their data while increasing the security and transparency of their transactions. All of this is accomplished without any centralized entity taking a cut of their profits.  
 
 ![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.04.48%20PM.png)
 
