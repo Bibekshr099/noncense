@@ -26,14 +26,14 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 
 
 
-## Technologies & Technical Challenges
+## Technologies
 
 **Framework: Truffle**
 * A one-stop shop for backend, frontend and testing detailed below (like Ruby on Rails).
 
 **Development Testing: Remix IDE**
 
-### Composing a Smart Contract
+### Composing Smart Contracts
 * Developed using Solidity, a high level programming language that compiles down into EVM (Ethereum Virtual Machine) code
 * Testing environment consisted of Truffle Develop and the Remix IDE 
 * Smart Contracts deployed to the Ropsten Test Network (an Ethereum public testnet). Ethereum testnets behave similarly to the Ethereum mainnet (they even have nontrivial mining difficulty); however, ether and gas don't cost real money on these networks. 
@@ -51,11 +51,11 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
         
 
 
-**Frontend: Web3.js, React, Redux, JavaScript, HTML, CSS**
+## Frontend: Web3.js, React, Redux, JavaScript, HTML, CSS
 The frontend uses a Redux store containing a single, global state and React components to render the various portions of the web application. 
 
 ### Web3.js
-* Web3.js serves as a communication layer between any Ethereum Node and a traditional JavaScript application frontend. It's a  Javascript library that wraps around multiple higher order components and provides standardized function calls to read and write information to the underlying Ethereum blockchain. Used in the application frontend. 
+Web3.js serves as a communication layer between any Ethereum Node and a traditional JavaScript application frontend. It's a  Javascript library that wraps around multiple higher order components and provides standardized function calls to read and write information to the underlying Ethereum blockchain. Used in the application frontend. 
 
 Each application creates an instance of a web3 object, which allows the application to call certain functions and communicate with a specific Ethereum node through a given Wallet provider. 
 
