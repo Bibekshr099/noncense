@@ -35,7 +35,6 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 
 ### Composing a Smart Contract
 * Developed using Solidity, a high level programming language that compiles down into EVM (Ethereum Virtual Machine) code
-* Web3.js serves as a communication layer between any Ethereum Node and a traditional JavaScript application frontend.
 * Testing environment consisted of Truffle Develop and the Remix IDE 
 * Smart Contracts deployed to the Ropsten Test Network (an Ethereum public testnet). Ethereum testnets behave similarly to the Ethereum mainnet (they even have nontrivial mining difficulty); however, ether and gas don't cost real money on these networks. 
 
@@ -56,20 +55,16 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 The frontend uses a Redux store containing a single, global state and React components to render the various portions of the web application. 
 
 ### Web3.js
-* A Javascript library that wraps around multiple higher order components and provides standardized function calls to read and write information to the underlying Ethereum blockchain. Used in the application frontend. 
+* Web3.js serves as a communication layer between any Ethereum Node and a traditional JavaScript application frontend. It's a  Javascript library that wraps around multiple higher order components and provides standardized function calls to read and write information to the underlying Ethereum blockchain. Used in the application frontend. 
 
 Each application creates an instance of a web3 object, which allows the application to call certain functions and communicate with a specific Ethereum node through a given Wallet provider. 
 
 For development, we used ganache, a local development blockchain that came with a built in ganache-provider. 
 The production ready site uses Infura, a decentralized hosting service that runs full Ethereum nodes for developers. Infura hosts a particular node and gives developers a convenient API for communicating with that unique node to make function calls to deployed smart contract code. This way, developers don't need to run full nodes in order to start creating applications. For now, the Infura hosting service is free. 
 
-* Backend:
-        * Ethereum node
-        * Smart Contracts deployed to the blockchain
-    * Frontend:
-        * JavaScript Web Application
-    * Uses JSON RPC calls
-    * Uses Web3 Reducer to handle actions that attempt to change the state 
+The following is an snippet of code that shows how the Web3.js library is used in the application frontend. 
+
+    * The Web3 Reducer handles actions that attempt to change the state 
       of the Web3 object
     
     
