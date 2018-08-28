@@ -19,31 +19,56 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 
 ![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.04.48%20PM.png)
 
+ 
+* Example code for the Buy function of the Diamonds.sol contract:
+
+        function buy(uint id) payable public {
+            // id is index of diamond in the arrays
+            require(diamondPrices.length > id &&
+                msg.value >= diamondPrices[id] * 1e18);
+
+            diamondOwners[id].transfer(diamondPrices[id] * 1e18);
+            diamondOwners[id] = msg.sender; // change owner
+        }
+        
+       
+![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.07.53%20PM.png)
+
+
+
 ## Technologies & Technical Challenges
 
 **Framework: Truffle**
 * A one-stop shop for backend, frontend and testing detailed below (like Ruby on Rails).
 
-**Backend: Solidity**
-
-**Frontend: Web3.js, JavaScript, HTML, CSS**
-
 **Development Testing: Remix IDE**
 
 ### Composing a Smart Contract
-* This uses Solidity on the Ethereum framework
-* Web3.js communicates between Ethereum Node (similar to a server) or Smart Contract deployed to blockchain from inside JavaScript/web application.
-* Determining the details of the contract was of critical importance as once the contracts are live, they determine the details of the transaction. One challenge we faced was testing the contracts on Remix IDE and then transferring the contracts to our particular application.  The behaviors varied slightly in our environment.
+* Developed using Solidity, a high level programming language that compiles down into EVM (Ethereum Virtual Machine) code
+* Web3.js serves as a communication layer between any Ethereum Node and a traditional JavaScript application frontend.
+* Testing environment consisted of Truffle Develop and the Remix IDE 
+* Smart Contracts deployed to the Ropsten Test Network (an Ethereum public testnet). Ethereum testnets behave similarly to the Ethereum mainnet (they even have nontrivial mining difficulty); however, ether and gas don't cost real money on these networks. 
+
+
+**Frontend: Web3.js, React, Redux, JavaScript, HTML, CSS**
+The frontend uses a Redux store containing a single, global state and React components to render the various portions of the web application. 
 
 ### Web3.js
-* Communicates between frontend and backend.
-    * Backend:
+* A Javascript library that wraps around multiple higher order components and provides standardized function calls to read and write information to the underlying Ethereum blockchain. Used in the application frontend. 
+
+Each application creates an instance of a web3 object, which allows the application to call certain functions and communicate with a specific Ethereum node through a given Wallet provider. 
+
+For development, we used ganache, a local development blockchain that came with a built in ganache-provider. 
+The production ready site uses Infura, a decentralized hosting service that runs full Ethereum nodes for developers. Infura hosts a particular node and gives developers a convenient API for communicating with that unique node to make function calls to deployed smart contract code. This way, developers don't need to run full nodes in order to start creating applications. For now, the Infura hosting service is free. 
+
+* Backend:
         * Ethereum node
-        * Smart Contract deployed to the blockchain
+        * Smart Contracts deployed to the blockchain
     * Frontend:
-        * JavaScript/Web Application
+        * JavaScript Web Application
     * Uses JSON RPC calls
-    * Web3 Reducer
+    * Uses Web3 Reducer to handle actions that attempt to change the state 
+      of the Web3 object
     
     
           const initialState = {
@@ -63,35 +88,6 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 
           export default web3Reducer
 
-### Constructing a Marketplace
-* This is done on the Ethereum blockchain.
-    * Although this presents as a normal webpage, everything under the hood is written in Web3 API, truffle, and Solidity.
-    * This framework relies heavily on Web3.js in order to coordinate communication between the front end and the appropriate       smart contracts deployed to Ethereum public testnets.
-
-* Determining the nature of the interactions using Smart Contracts.
-    * Users can buy and sell precious stones. It may also come to light that more details of the transaction would be necessary for this marketplace to be functional.
-    
-![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.07.53%20PM.png)
-
-* Buy function of the contract:
-
-        function buy(uint id) payable public {
-            // id is index of diamond in the arrays
-            require(diamondPrices.length > id &&
-                msg.value >= diamondPrices[id] * 1e18);
-
-            diamondOwners[id].transfer(diamondPrices[id] * 1e18);
-            diamondOwners[id] = msg.sender; // change owner
-        }
-
-### UX
-* Frontend Interface
-    * Implemented calls to the blockchain to search for precious stones that are available.
-    * We have sent the stone data to render on the application interface.
-    * The desired details of the transaction for the seller will be available for the user to see.
-
-* Backend
-    * Our backend is a standard Ethereum build which houses all of the necessary information.  This includes Smart Contracts and React for website navigation.
 
 ## Team Members
 
