@@ -62,7 +62,7 @@ Each application creates an instance of a web3 object, which allows the applicat
 For development, we used ganache, a local development blockchain that came with a built in ganache-provider. 
 The production ready site uses Infura, a decentralized hosting service that runs full Ethereum nodes for developers. Infura hosts a particular node and gives developers a convenient API for communicating with that unique node to make function calls to deployed smart contract code. This way, developers don't need to run full nodes in order to start creating applications. For now, the Infura hosting service is free. 
 
-The following is an snippet of code that shows how the Web3.js library is used in the application frontend. 
+The following is a snippet of code that shows how the Web3.js library is used in the application frontend. 
 
     * The Web3 Reducer handles actions that attempt to change the state 
       of the Web3 object
