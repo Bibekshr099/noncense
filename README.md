@@ -51,7 +51,7 @@ Currently, large scale peer to peer buying and selling of jewelry isn’t feasib
         
 
 
-## Frontend: Web3.js, React, Redux, JavaScript, HTML, CSS
+## Frontend: Web3.js, React, Redux, JavaScript
 The frontend uses a Redux store containing a single, global state and React components to render the various portions of the web application. 
 
 ### Web3.js
